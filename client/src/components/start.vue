@@ -1,5 +1,5 @@
 <template>
-  <button @click="onStart">{{action}}</button>
+  <b-button @click="onStart" class="is-primary">{{action}}</b-button>
 </template>
 
 <script>

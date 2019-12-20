@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>{{name}}</h1>
+    <h1 class="is-size-1">{{name}}</h1>
     <router-view/>
   </div>
 </template>

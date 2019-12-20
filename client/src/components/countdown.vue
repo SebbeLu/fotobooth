@@ -1,11 +1,12 @@
 <template>
   <div>
-    <h1>{{header}}</h1>
-    <h1>{{seconds}}</h1>
+    <h1 class="is-size-2">{{header}}</h1>
+    <h1 class="is-size-2">{{seconds}}</h1>
   </div>
 </template>
 
 <script>
+import CameraService from '@/services/CameraService'
 export default {
   name: 'Countdown',
   timer: null,
@@ -23,6 +24,7 @@ export default {
       this.seconds--
       if (this.seconds <= 0) {
         clearInterval(this.timer)
+        CameraService.shot()
         this.$router.go(-1)
       }
     }
