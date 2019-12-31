@@ -12,7 +12,7 @@ export default {
   },
   methods: {
     onStart () {
-      this.$router.push({ name: 'Countdown' })
+      this.$router.push({name: 'Countdown'})
     }
   }
 }

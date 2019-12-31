@@ -2,6 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
+const fs = require('fs')
+const path = 'C:/Users/darko/OneDrive/Bilder'
 
 const app = express()
 app.use(morgan('combined'))
@@ -23,5 +25,10 @@ app.post('/shot', (req, res) => {
     message: 'Foto gemacht!'
   })
 })
+app.get('/images', (req, res) => {
+  var files = fs.readdirSync(path)
+  res.send(files)
+})
 
+app.use('/images', express.static(path))
 app.listen(process.env.PORT || 8081)
