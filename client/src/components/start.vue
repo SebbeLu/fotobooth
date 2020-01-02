@@ -1,13 +1,18 @@
 <template>
-  <b-button @click="onStart" class="is-primary">{{action}}</b-button>
+<div>
+  <h1 class="is-size-1"><fa-icon icon="camera-retro"/></h1>
+  <h1 class="is-size-1">{{text}}</h1>
+  <b-button @click="onStart" class="is-large is-red">{{action}}</b-button>
+</div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Start',
   data () {
     return {
-      action: 'Start'
+      action: 'Cheeeese!',
+      text: 'Mach ein Foto!:)'
     }
   },
   methods: {

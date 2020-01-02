@@ -1,14 +1,15 @@
 <template>
-  <b-navbar class='is-light'>
+  <b-navbar class='is-primary'>
     <template slot='start'>
       <b-navbar-item href='#'>
-        <b-icon pack='fas' icon='iamges'></b-icon>Bilder
+        <fa-icon icon='images'/>Bilder
       </b-navbar-item>
     </template>
     <template slot='end'>
       <b-navbar-item tag='div'>
         <div class='buttons'>
-          <a class='button is-primary'>
+          <a class='button is-secondary'>
+           <fa-icon icon='cog'/>
             <strong>Einstellungen</strong>
           </a>
         </div>

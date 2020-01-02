@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
 import Router from 'vue-router'
 import Start from '@/components/start'
 import Countdown from '@/components/countdown'
