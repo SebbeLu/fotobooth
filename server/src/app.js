@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
 const fs = require('fs')
+const camera = require('take_photo.js')
 const path = 'C:/Users/darko/OneDrive/Bilder'
 
 const app = express()
@@ -21,6 +22,7 @@ app.post('/focus', (req, res) => {
   })
 })
 app.post('/shot', (req, res) => {
+  camera.takephoto()
   res.send({
     message: 'Foto gemacht!'
   })

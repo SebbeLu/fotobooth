@@ -30,7 +30,7 @@ export default {
 // Import Bulma's core
 @import "~bulma/sass/utilities/_all";
 // Set your colors
-$primary: #2A9D8F;
+$primary: #E76F51;
 $primary-invert: findColorInvert($primary);
 $secondary: rgb(255, 230, 166);
 $secondary-invert: findColorInvert($secondary);

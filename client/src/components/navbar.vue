@@ -1,7 +1,7 @@
 <template>
   <b-navbar class='is-primary'>
     <template slot='start'>
-      <b-navbar-item href='#'>
+      <b-navbar-item @click='onImages' href='#'>
         <fa-icon icon='images'/>Bilder
       </b-navbar-item>
     </template>
@@ -22,6 +22,11 @@ export default {
   name: 'navbar',
   data () {
     return {}
+  },
+  methods: {
+    onImages () {
+      this.$router.push({ name: 'Gallery' })
+    }
   }
 }
 </script>
