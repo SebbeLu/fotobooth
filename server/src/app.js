@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
 const fs = require('fs')
-const camera = require('take_photo.js')
+const camera = require('./take_photo.js')
 const path = './../images'
 
 const app = express()
