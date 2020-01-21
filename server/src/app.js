@@ -4,7 +4,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const fs = require('fs')
 const camera = require('./take_photo.js')
-const path = '../../../images'
+const path = '/home/pi/images'
 
 const app = express()
 app.use(morgan('combined'))
