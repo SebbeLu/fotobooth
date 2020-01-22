@@ -18,16 +18,18 @@ import GalleryService from '@/services/GalleryService'
 export default {
   data: function () {
     return {
-      images: null,
+      images: [],
       index: null
     }
   },
   mounted () {
-    var images = GalleryService.imageList()
-    images.forEach(function (item, index) {
-      if (item.match(/.jpg/)) {
-        this.images.push('http://192.168.178.57:8081/images/' + item)
-      }
+    var self = this
+    GalleryService.imageList().then(function (response) {
+      response.data.forEach(function (item, index) {
+        if (item.match(/.jpg/)) {
+          self.images.push('http://192.168.178.57:8081/images/' + item)
+        }
+      })
     })
   },
   components: {
