@@ -1,8 +1,8 @@
 <template>
 <div>
-  <h1 class="is-size-1"><fa-icon icon="camera-retro"/></h1>
-  <h1 class="is-size-1">{{text}}</h1>
-  <b-button @click="onStart" class="is-large is-red">{{action}}</b-button>
+  <h1 class="is-size-1 is-white"><fa-icon icon="camera-retro"/></h1>
+  <h1 class="is-size-1 is-white">{{text}}</h1>
+  <b-button @click="onStart" class="is-large is-primary">{{action}}</b-button>
 </div>
 </template>
 
@@ -27,6 +27,7 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+  color: rgb(206, 206, 206);
 }
 ul {
   list-style-type: none;

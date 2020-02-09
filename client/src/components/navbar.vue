@@ -1,8 +1,11 @@
 <template>
   <b-navbar class='is-primary'>
     <template slot='start'>
+      <b-navbar-item @click='onHome' href='#'>
+        <fa-icon icon='home'/> HOME
+      </b-navbar-item>
       <b-navbar-item @click='onImages' href='#'>
-        <fa-icon icon='images'/>Bilder
+        <fa-icon icon='images'/> BILDER
       </b-navbar-item>
     </template>
     <template slot='end'>
@@ -26,6 +29,9 @@ export default {
   methods: {
     onImages () {
       this.$router.push({ name: 'Gallery' })
+    },
+    onHome () {
+      this.$router.push({ name: 'Start' })
     }
   }
 }

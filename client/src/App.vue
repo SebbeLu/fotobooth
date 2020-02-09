@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar/>
-    <div class="hero is-secondary is-fullheight is-bold">
+    <div class="hero has-bg-img is-fullheight is-bold">
     <div class="hero-body">
     <div class="container has-text-centered">
     <router-view/>
@@ -29,10 +29,12 @@ export default {
 <style lang="scss">
 // Import Bulma's core
 @import "~bulma/sass/utilities/_all";
+
+.has-bg-img { background: url('assets/images/img.jpg')center center; background-size:cover; }
 // Set your colors
-$primary: #E76F51;
+$primary: rgb(81, 226, 231);
 $primary-invert: findColorInvert($primary);
-$secondary: rgb(255, 230, 166);
+$secondary: rgb(46, 46, 46);
 $secondary-invert: findColorInvert($secondary);
 $red: #E76F51;
 $red-invert: findColorInvert($red);

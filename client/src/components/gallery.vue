@@ -26,8 +26,8 @@ export default {
     var self = this
     GalleryService.imageList().then(function (response) {
       response.data.forEach(function (item, index) {
-        if (item.match(/.jpg/)) {
-          self.images.push('http://192.168.178.57:8081/images/' + item)
+        if (item.match(/.jpg/) || item.match(/.JPG/)) {
+          self.images.push('http://192.168.4.1:8081/images/' + item)
         }
       })
     })

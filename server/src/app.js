@@ -4,12 +4,15 @@ const cors = require('cors')
 const morgan = require('morgan')
 const fs = require('fs')
 const camera = require('./take_photo.js')
+const observer = require('./observer')
 const path = '/home/pi/images'
 
 const app = express()
 app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
+
+observer.watchUpload()
 
 app.post('/register', (req, res) => {
   res.send({
