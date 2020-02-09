@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
 const fs = require('fs')
+const config = require('./config.json')
 const camera = require('./take_photo.js')
 const observer = require('./observer')
 const path = '/home/pi/images'
@@ -36,4 +37,4 @@ app.get('/images', (req, res) => {
 })
 
 app.use('/images', express.static(path))
-app.listen(process.env.PORT || 8081)
+app.listen(process.env.PORT || config.ports.http)
