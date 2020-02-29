@@ -32,6 +32,7 @@ app.post('/shot', (req, res) => {
 })
 app.get('/images', (req, res) => {
   var files = fs.readdirSync(config.imageFolder)
+  files.reverse()
   res.send(files)
 })
 
