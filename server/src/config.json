@@ -1,6 +1,6 @@
 {
     "ports": {"http": "8081"},
-    "upload": "/home/pi/upload",
-    "imageFolder": "/home/pi/images",
+    "upload": "C:/Users/darko/Documents/upload",
+    "imageFolder": "C:/Users/darko/Documents/images",
     "gpio":{"pin": "23"}
 }

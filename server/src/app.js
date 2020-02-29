@@ -6,7 +6,6 @@ const fs = require('fs')
 const config = require('./config.json')
 const camera = require('./take_photo.js')
 const observer = require('./observer')
-const path = '/home/pi/images'
 
 const app = express()
 app.use(morgan('combined'))
@@ -32,9 +31,9 @@ app.post('/shot', (req, res) => {
   })
 })
 app.get('/images', (req, res) => {
-  var files = fs.readdirSync(path)
+  var files = fs.readdirSync(config.imageFolder)
   res.send(files)
 })
 
-app.use('/images', express.static(path))
+app.use('/images', express.static(config.imageFolder))
 app.listen(process.env.PORT || config.ports.http)
