@@ -8,11 +8,19 @@ const camera = require('./take_photo.js')
 const observer = require('./observer')
 
 const app = express()
+const server = require('http').Server(app)
+const io = require('socket.io')(server)
 app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 
 observer.watchUpload()
+io.on('connection', (client) => {
+  console.log('Client connected...')
+  client.on('join', (data) => {
+    console.log(data)
+  })
+})
 
 app.post('/register', (req, res) => {
   res.send({
@@ -37,4 +45,4 @@ app.get('/images', (req, res) => {
 })
 
 app.use('/images', express.static(config.imageFolder))
-app.listen(process.env.PORT || config.ports.http)
+server.listen(process.env.PORT || config.ports.http)
