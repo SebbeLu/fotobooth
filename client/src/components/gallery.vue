@@ -27,7 +27,7 @@ export default {
     GalleryService.imageList().then(function (response) {
       response.data.forEach(function (item, index) {
         if (item.match(/.jpg/) || item.match(/.JPG/)) {
-          self.images.push('http://192.168.4.1:8081/images/' + item)
+          self.images.push(process.env.VUE_APP_SERVER + 'images/' + item)
         }
       })
     })
