@@ -6,9 +6,14 @@ const path = require('path')
 var methods = {}
 
 methods.watchUpload = function () {
-  chokidar.watch(config.upload).on('add', (imagePath, event) => {
-    console.log(imagePath, path.basename(imagePath), event)
-    sharp(imagePath).resize({ width: 1080 }).toFile(config.imageFolder + '/' + path.basename(imagePath))
+  chokidar.watch(config.upload, {awaitWriteFinish: true}).on('add', (imagePath) => {
+    console.log(imagePath)
+    try{
+     sharp(imagePath).resize({ width: 1080 }).toFile(config.imageFolder + '/' + path.basename(imagePath)).then(console.log)
+    }
+    catch(err){
+      console.log(err)
+    }
   })
 }
 module.exports = methods
